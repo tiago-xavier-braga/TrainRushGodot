@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/kenney_train_kit/railroad_straight.fbx" id="1"]
+
+[node name="Railroad" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 33.0411)
+
+[node name="Model2" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -15.0117)
+
+[node name="Model3" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 68.9)
+
+[node name="Model4" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 9.0109)
+
+[node name="Model5" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -39.0548)
+
+[node name="Model6" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -62.91)
+
+[node name="Model7" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 56.98)
+
+[node name="Model8" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -3.0024)
+
+[node name="Model9" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -50.98)
+
+[node name="Model10" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, -27.0292)
+
+[node name="Model11" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 21.0158)
+
+[node name="Model12" parent="." instance=ExtResource("1")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 2, 0, 45)

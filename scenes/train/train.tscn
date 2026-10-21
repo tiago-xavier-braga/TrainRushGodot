@@ -1,0 +1,156 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/train/train.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/train/wagon.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/train/train_data.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/train/wagon_data.gd" id="4"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx_train_movement.wav" id="5"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx_train_horn.wav" id="6"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx_level_up.wav" id="7"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_emote_bubble.tres" id="8"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_max_capacity.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_1.tres" id="t1"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_2.tres" id="t2"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_3.tres" id="t3"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_4.tres" id="t4"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_5.tres" id="t5"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_6.tres" id="t6"]
+[ext_resource type="Resource" path="res://resources/trains/train_data_7.tres" id="t7"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_1.tres" id="w1"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_2.tres" id="w2"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_3.tres" id="w3"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_4.tres" id="w4"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_5.tres" id="w5"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_6.tres" id="w6"]
+[ext_resource type="Resource" path="res://resources/wagons/wagon_data_7.tres" id="w7"]
+
+[node name="Train" type="Node3D"]
+script = ExtResource("1")
+models = Array[ExtResource("3")]([ExtResource("t1"), ExtResource("t2"), ExtResource("t3"), ExtResource("t4"), ExtResource("t5"), ExtResource("t6"), ExtResource("t7")])
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Wagons" type="Node3D" parent="."]
+
+[node name="Wagon1" type="Node3D" parent="Wagons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5)
+script = ExtResource("2")
+models = Array[ExtResource("4")]([ExtResource("w1"), ExtResource("w2"), ExtResource("w3"), ExtResource("w4"), ExtResource("w5"), ExtResource("w6"), ExtResource("w7")])
+
+[node name="Model" type="Node3D" parent="Wagons/Wagon1"]
+
+[node name="Alert" type="Node3D" parent="Wagons/Wagon1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+
+[node name="Bubble" type="Sprite3D" parent="Wagons/Wagon1/Alert"]
+pixel_size = 0.00327
+billboard = 1
+texture = ExtResource("8")
+
+[node name="Icon" type="Sprite3D" parent="Wagons/Wagon1/Alert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+pixel_size = 0.00176
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+render_priority = 1
+texture = ExtResource("9")
+
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Wagons/Wagon1"]
+stream = ExtResource("7")
+volume_db = -6.02
+
+[node name="Wagon2" type="Node3D" parent="Wagons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+script = ExtResource("2")
+models = Array[ExtResource("4")]([ExtResource("w1"), ExtResource("w2"), ExtResource("w3"), ExtResource("w4"), ExtResource("w5"), ExtResource("w6"), ExtResource("w7")])
+
+[node name="Model" type="Node3D" parent="Wagons/Wagon2"]
+
+[node name="Alert" type="Node3D" parent="Wagons/Wagon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+
+[node name="Bubble" type="Sprite3D" parent="Wagons/Wagon2/Alert"]
+pixel_size = 0.00327
+billboard = 1
+texture = ExtResource("8")
+
+[node name="Icon" type="Sprite3D" parent="Wagons/Wagon2/Alert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+pixel_size = 0.00176
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+render_priority = 1
+texture = ExtResource("9")
+
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Wagons/Wagon2"]
+stream = ExtResource("7")
+volume_db = -6.02
+
+[node name="Wagon3" type="Node3D" parent="Wagons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.5)
+script = ExtResource("2")
+models = Array[ExtResource("4")]([ExtResource("w1"), ExtResource("w2"), ExtResource("w3"), ExtResource("w4"), ExtResource("w5"), ExtResource("w6"), ExtResource("w7")])
+
+[node name="Model" type="Node3D" parent="Wagons/Wagon3"]
+
+[node name="Alert" type="Node3D" parent="Wagons/Wagon3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+
+[node name="Bubble" type="Sprite3D" parent="Wagons/Wagon3/Alert"]
+pixel_size = 0.00327
+billboard = 1
+texture = ExtResource("8")
+
+[node name="Icon" type="Sprite3D" parent="Wagons/Wagon3/Alert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+pixel_size = 0.00176
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+render_priority = 1
+texture = ExtResource("9")
+
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Wagons/Wagon3"]
+stream = ExtResource("7")
+volume_db = -6.02
+
+[node name="Wagon4" type="Node3D" parent="Wagons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+script = ExtResource("2")
+models = Array[ExtResource("4")]([ExtResource("w1"), ExtResource("w2"), ExtResource("w3"), ExtResource("w4"), ExtResource("w5"), ExtResource("w6"), ExtResource("w7")])
+
+[node name="Model" type="Node3D" parent="Wagons/Wagon4"]
+
+[node name="Alert" type="Node3D" parent="Wagons/Wagon4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+
+[node name="Bubble" type="Sprite3D" parent="Wagons/Wagon4/Alert"]
+pixel_size = 0.00327
+billboard = 1
+texture = ExtResource("8")
+
+[node name="Icon" type="Sprite3D" parent="Wagons/Wagon4/Alert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+pixel_size = 0.00176
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+render_priority = 1
+texture = ExtResource("9")
+
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Wagons/Wagon4"]
+stream = ExtResource("7")
+volume_db = -6.02
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Movement" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5")
+
+[node name="Horn" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6")
+
+[node name="Upgrade" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7")
+volume_db = -12.04

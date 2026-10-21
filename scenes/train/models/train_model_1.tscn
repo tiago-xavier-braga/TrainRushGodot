@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/kenney_train_kit/train_locomotive_b.fbx" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/train/train_smoke.tscn" id="2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2.6327, 3.0353, 5.2)
+
+[node name="TrainModel1" type="Node3D"]
+
+[node name="Model" type="StaticBody3D" parent="."]
+
+[node name="Mesh" parent="Model" instance=ExtResource("1")]
+transform = Transform3D(-2, 0, 0, 0, 2, 0, 0, 0, -2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8014, 0)
+shape = SubResource("BoxShape3D_1")
+
+[node name="Smoke" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68, -1.59)

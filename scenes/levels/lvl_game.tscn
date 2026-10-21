@@ -1,0 +1,246 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/mat_wall.tres" id="1"]
+[ext_resource type="Material" path="res://assets/materials/mat_ground.tres" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/environment/entrance_gate.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/environment/double_door.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/environment/railroad.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/station/station.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/progression/wagon_unlock.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/progression/capacity_upgrade.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/progression/speed_upgrade.tscn" id="9"]
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial.gd" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/tutorial/arrow.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="12"]
+[ext_resource type="AudioStream" path="res://assets/audio/music_the_grey_room.mp3" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="14"]
+[ext_resource type="Script" path="res://scripts/camera/camera_follow.gd" id="15"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+material = ExtResource("1")
+size = Vector3(34, 1.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2"]
+size = Vector3(34, 1.25, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+material = ExtResource("1")
+size = Vector3(27.5, 1.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4"]
+size = Vector3(27.5, 1.25, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+material = ExtResource("1")
+size = Vector3(3.72, 1.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6"]
+size = Vector3(3.72, 1.25, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+material = ExtResource("1")
+size = Vector3(0.89, 1.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8"]
+size = Vector3(0.89, 1.25, 0.25)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_9"]
+material = ExtResource("2")
+size = Vector2(200, 200)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_10"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_11"]
+
+[sub_resource type="Sky" id="Sky_12"]
+sky_material = SubResource("ProceduralSkyMaterial_11")
+
+[sub_resource type="Environment" id="Environment_13"]
+background_mode = 2
+sky = SubResource("Sky_12")
+ambient_light_source = 2
+ambient_light_color = Color(0.6603774, 0.45193467, 0.27100393, 1)
+ambient_light_energy = 0.3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.96, 0.87, 0.76, 1)
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 300.0
+
+[node name="Game" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Wall" type="Node3D" parent="Environment"]
+
+[node name="LeftWalls" type="Node3D" parent="Environment/Wall"]
+
+[node name="Cube2" type="StaticBody3D" parent="Environment/Wall/LeftWalls"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -32.43, 0.625, -3.12)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/LeftWalls/Cube2"]
+mesh = SubResource("BoxMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/LeftWalls/Cube2"]
+shape = SubResource("BoxShape3D_2")
+
+[node name="Cube1" type="StaticBody3D" parent="Environment/Wall/LeftWalls"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -18.7, 0.625, 20)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/LeftWalls/Cube1"]
+mesh = SubResource("BoxMesh_3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/LeftWalls/Cube1"]
+shape = SubResource("BoxShape3D_4")
+
+[node name="Cube6" type="StaticBody3D" parent="Environment/Wall/LeftWalls"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -32.43, 0.625, 18.26)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/LeftWalls/Cube6"]
+mesh = SubResource("BoxMesh_5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/LeftWalls/Cube6"]
+shape = SubResource("BoxShape3D_6")
+
+[node name="Cube" type="StaticBody3D" parent="Environment/Wall/LeftWalls"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -18.6, 0.625, -20)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/LeftWalls/Cube"]
+mesh = SubResource("BoxMesh_3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/LeftWalls/Cube"]
+shape = SubResource("BoxShape3D_4")
+
+[node name="RightWalls" type="Node3D" parent="Environment/Wall"]
+
+[node name="Cube6" type="StaticBody3D" parent="Environment/Wall/RightWalls"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 32.43, 0.625, -19.684)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/RightWalls/Cube6"]
+mesh = SubResource("BoxMesh_7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/RightWalls/Cube6"]
+shape = SubResource("BoxShape3D_8")
+
+[node name="Cube" type="StaticBody3D" parent="Environment/Wall/RightWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6, 0.625, 20)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/RightWalls/Cube"]
+mesh = SubResource("BoxMesh_3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/RightWalls/Cube"]
+shape = SubResource("BoxShape3D_4")
+
+[node name="Cube1" type="StaticBody3D" parent="Environment/Wall/RightWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7, 0.625, -20)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/RightWalls/Cube1"]
+mesh = SubResource("BoxMesh_3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/RightWalls/Cube1"]
+shape = SubResource("BoxShape3D_4")
+
+[node name="Cube2" type="StaticBody3D" parent="Environment/Wall/RightWalls"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 32.43, 0.625, 3.12)
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Wall/RightWalls/Cube2"]
+mesh = SubResource("BoxMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Wall/RightWalls/Cube2"]
+shape = SubResource("BoxShape3D_2")
+
+[node name="Ground" type="StaticBody3D" parent="Environment"]
+
+[node name="Mesh" type="MeshInstance3D" parent="Environment/Ground"]
+mesh = SubResource("PlaneMesh_9")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
+shape = SubResource("WorldBoundaryShape3D_10")
+
+[node name="EntranceGateBack" parent="Environment" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="DoubleDoor1" parent="Environment" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.857, 0.001, 14.43)
+
+[node name="RailroadDown" parent="Environment" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5.86)
+
+[node name="RailroadUp" parent="Environment" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="DoubleDoor" parent="Environment" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.857, 0.001, -15.8505)
+
+[node name="EntranceGateFront" parent="Environment" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="RightStation" parent="." instance=ExtResource("6")]
+
+[node name="LeftStation" parent="." instance=ExtResource("6")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+save_prefix = "left"
+gate_prices = Array[int]([50, 100, 200, 400])
+
+[node name="Upgrades" type="Node3D" parent="RightStation"]
+
+[node name="WagonUnlock" parent="RightStation/Upgrades" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.05, 0.01, 9.2)
+
+[node name="CapacityUpgrade" parent="RightStation/Upgrades" instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.01, 4.6)
+
+[node name="SpeedUpgrade" parent="RightStation/Upgrades" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.01, 0)
+
+[node name="Upgrades" type="Node3D" parent="LeftStation"]
+
+[node name="WagonUnlock" parent="LeftStation/Upgrades" instance=ExtResource("7")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 24.876, 0.01, 0.6581)
+
+[node name="CapacityUpgrade" parent="LeftStation/Upgrades" instance=ExtResource("8")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 24.926, 0.01, 5.2581)
+
+[node name="SpeedUpgrade" parent="LeftStation/Upgrades" instance=ExtResource("9")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 24.926, 0.01, 9.8581)
+
+[node name="Tutorial" type="Node3D" parent="RightStation"]
+script = ExtResource("10")
+
+[node name="FenceTarget" type="Marker3D" parent="RightStation/Tutorial"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.359, 2, -8.872)
+
+[node name="TrafficLightTarget" type="Marker3D" parent="RightStation/Tutorial"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8, 2, -14)
+
+[node name="Arrow" parent="RightStation/Tutorial" instance=ExtResource("11")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8, 2, -14)
+
+[node name="HUD" parent="." instance=ExtResource("12")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13")
+volume_db = -10.46
+autoplay = true
+
+[node name="Player" parent="." instance=ExtResource("14")]
+transform = Transform3D(-0.2205, 0, -0.9754, 0, 1, 0, 0.9754, 0, -0.2205, 9.58, 0, 0.67)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.383, 0.3214, 0, 0.6428, 0.766, -0.5, -0.6634, 0.5567, 0, 3, 0)
+light_energy = 1.1
+light_color = Color(1, 0.94, 0.85, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 40.0
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.7071, 0.7071, 0, -0.7071, 0.7071, 9.58, 18, 18.67)
+fov = 60.0
+near = 0.05
+far = 1000.0
+script = ExtResource("15")
+target = NodePath("../Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_13")

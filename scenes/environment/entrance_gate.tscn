@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/mat_wall.tres" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_prototype_kit/shape_cylinder_half.fbx" id="2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(10.412, 5.2744, 0.4125)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+material = ExtResource("1")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3"]
+size = Vector3(0.5, 5, 0.5)
+
+[node name="EntranceGate" type="Node3D"]
+
+[node name="Collider" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Pillar" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Pillar"]
+mesh = SubResource("CylinderMesh_2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar"]
+shape = SubResource("BoxShape3D_3")
+
+[node name="Pillar2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Pillar2"]
+mesh = SubResource("CylinderMesh_2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar2"]
+shape = SubResource("BoxShape3D_3")
+
+[node name="Roof" parent="." instance=ExtResource("2")]
+transform = Transform3D(0, 10.586, -0.0957, 1, 0, 0, 0, -0.2026, -4.9991, -5.27, 5.249, 0)

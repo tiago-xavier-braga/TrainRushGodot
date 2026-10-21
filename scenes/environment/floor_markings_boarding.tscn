@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/kenney_prototype_kit/indicator_special_area.fbx" id="1"]
+
+[node name="FloorMarkingsBoarding" type="Node3D"]
+
+[node name="IndicatorSpecialArea" parent="." instance=ExtResource("1")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.01, -3.01)
+
+[node name="IndicatorSpecialArea2" parent="." instance=ExtResource("1")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.01, 2.49)
+
+[node name="IndicatorSpecialArea3" parent="." instance=ExtResource("1")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.01, 8.13)
+
+[node name="IndicatorSpecialArea4" parent="." instance=ExtResource("1")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.01, -8.51)

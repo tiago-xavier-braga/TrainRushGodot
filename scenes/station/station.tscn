@@ -1,0 +1,202 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/station/station.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/progression_settings.tres" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/environment/fence.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/environment/cash_register.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/environment/floor_markings_boarding.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/train/train.tscn" id="6"]
+[ext_resource type="Script" path="res://scripts/station/boarding.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/station/wagon_queue.gd" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/station/fence_gate.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/station/traffic_light.tscn" id="10"]
+[ext_resource type="Script" path="res://scripts/progression/passenger_revenue.gd" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/ui/floating_text.tscn" id="12"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx_level_up.wav" id="13"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_female_b.fbx" id="14"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_female_c.fbx" id="15"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_female_d.fbx" id="16"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_female_e.fbx" id="17"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_female_f.fbx" id="18"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_a.fbx" id="19"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_b.fbx" id="20"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_c.fbx" id="21"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_d.fbx" id="22"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_e.fbx" id="23"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_characters/character_male_f.fbx" id="24"]
+[ext_resource type="Script" path="res://scripts/passengers/passenger_spawner.gd" id="25"]
+
+[node name="Station" type="Node3D"]
+script = ExtResource("1")
+settings = ExtResource("2")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="SetFences" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.278, 0, -15.24)
+
+[node name="FencesModels" type="Node3D" parent="Environment/SetFences"]
+
+[node name="Fence12" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, 1.357)
+
+[node name="Fence14" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, 3.762)
+
+[node name="Fence15" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, 4.959)
+
+[node name="Fence1" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53, 0, 4.96)
+
+[node name="Fence9" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, -2.235)
+
+[node name="Fence13" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, 2.558)
+
+[node name="Fence8" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, -3.484)
+
+[node name="Fence10" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, -1.031)
+
+[node name="Fence6" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59, 0, 4.96)
+
+[node name="Fence2" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.964, 0, 4.96)
+
+[node name="Fence7" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.968, 0, 4.96)
+
+[node name="Fence5" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.143, 0, 4.96)
+
+[node name="Fence3" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96, 0, 4.96)
+
+[node name="Fence4" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.705, 0, 4.96)
+
+[node name="Fence11" parent="Environment/SetFences/FencesModels" instance=ExtResource("3")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.9631, 0, 0.161)
+
+[node name="CashRegister" parent="Environment/SetFences" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.078, 0, 4.207)
+
+[node name="FloorMarkingsBoarding" parent="Environment" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3.49)
+
+[node name="TrainStart" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 100)
+
+[node name="TrainStop" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10.4)
+
+[node name="TrainEnd" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -100)
+
+[node name="Train" parent="." instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 100)
+
+[node name="Boarding" type="Node3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 4.99, 0, 3.01)
+script = ExtResource("7")
+
+[node name="WagonQueue1" type="Node3D" parent="Boarding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.012, 0, 0.004)
+script = ExtResource("8")
+
+[node name="Place1" type="Marker3D" parent="Boarding/WagonQueue1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1.5)
+
+[node name="Place2" type="Marker3D" parent="Boarding/WagonQueue1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -3.5)
+
+[node name="Place3" type="Marker3D" parent="Boarding/WagonQueue1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -5.5)
+
+[node name="Place4" type="Marker3D" parent="Boarding/WagonQueue1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -7.5)
+
+[node name="WagonQueue2" type="Node3D" parent="Boarding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.446, 0, -0.021)
+script = ExtResource("8")
+
+[node name="Place1" type="Marker3D" parent="Boarding/WagonQueue2"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1.5)
+
+[node name="Place2" type="Marker3D" parent="Boarding/WagonQueue2"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -3.5)
+
+[node name="Place3" type="Marker3D" parent="Boarding/WagonQueue2"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -5.5)
+
+[node name="Place4" type="Marker3D" parent="Boarding/WagonQueue2"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -7.5)
+
+[node name="WagonQueue3" type="Node3D" parent="Boarding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.994, 0, -0.013)
+script = ExtResource("8")
+
+[node name="Place1" type="Marker3D" parent="Boarding/WagonQueue3"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1.5)
+
+[node name="Place2" type="Marker3D" parent="Boarding/WagonQueue3"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -3.5)
+
+[node name="Place3" type="Marker3D" parent="Boarding/WagonQueue3"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -5.5)
+
+[node name="Place4" type="Marker3D" parent="Boarding/WagonQueue3"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -7.5)
+
+[node name="WagonQueue4" type="Node3D" parent="Boarding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.612, 0, 0)
+script = ExtResource("8")
+
+[node name="Place1" type="Marker3D" parent="Boarding/WagonQueue4"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1.5)
+
+[node name="Place2" type="Marker3D" parent="Boarding/WagonQueue4"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -3.5)
+
+[node name="Place3" type="Marker3D" parent="Boarding/WagonQueue4"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -5.5)
+
+[node name="Place4" type="Marker3D" parent="Boarding/WagonQueue4"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -7.5)
+
+[node name="Gates" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.95, 0, -10.275)
+
+[node name="FenceGate1" parent="Gates" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, 0, 0)
+
+[node name="FenceGate2" parent="Gates" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.542, 0, 0)
+
+[node name="FenceGate3" parent="Gates" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+
+[node name="FenceGate4" parent="Gates" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.573, 0, 0)
+
+[node name="TrafficLight" parent="." instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.779, 0, -14.994)
+
+[node name="Revenue" type="Node3D" parent="."]
+script = ExtResource("11")
+
+[node name="FloatingText" parent="Revenue" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.8, -10)
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="Revenue"]
+stream = ExtResource("13")
+volume_db = -6.02
+
+[node name="PassengerSpawner" type="Node3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 45.47, 0, -17.2)
+script = ExtResource("25")
+model_scenes = Array[PackedScene]([ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20"), ExtResource("21"), ExtResource("22"), ExtResource("23"), ExtResource("24")])

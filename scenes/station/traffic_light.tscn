@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/station/traffic_light.gd" id="1"]
+[ext_resource type="Material" path="res://assets/materials/mat_traffic_light_base.tres" id="2"]
+[ext_resource type="Material" path="res://assets/materials/mat_traffic_light_red.tres" id="3"]
+[ext_resource type="Material" path="res://assets/materials/mat_traffic_light_yellow.tres" id="4"]
+[ext_resource type="Material" path="res://assets/materials/mat_traffic_light_green.tres" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/station/traffic_light_model.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_prototype_kit/lever_single.fbx" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/plates/pressure_plate.tscn" id="8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(1.5, 0.6, 0.9)
+
+[node name="TrafficLight" type="Node3D"]
+script = ExtResource("1")
+off_material = ExtResource("2")
+red_material = ExtResource("3")
+yellow_material = ExtResource("4")
+green_material = ExtResource("5")
+
+[node name="Model" parent="." instance=ExtResource("6")]
+
+[node name="Lever" parent="." instance=ExtResource("7")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, -3, 0.72, 0, 0)
+
+[node name="LeverBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_1")
+
+[node name="Plate" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72, 0.01, 0)

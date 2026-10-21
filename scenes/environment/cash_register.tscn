@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_market/cash_register.fbx" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/kenney_mini_market/character_employee.fbx" id="2"]
+[ext_resource type="Script" path="res://scripts/characters/character_model.gd" id="3"]
+[ext_resource type="PackedScene" path="res://assets/models/props/money.fbx" id="4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2.125, 1.4872, 2.125)
+
+[node name="CashRegister" type="Node3D"]
+
+[node name="CashRegisterModel" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -0.4284, 0, 0.1479)
+
+[node name="Mesh" parent="CashRegisterModel" instance=ExtResource("1")]
+transform = Transform3D(-2.5, 0, 0, 0, 2.5, 0, 0, 0, -2.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CashRegisterModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0.7436, -0.0625)
+shape = SubResource("BoxShape3D_1")
+
+[node name="CharacterEmployee" parent="." instance=ExtResource("2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.4086, 0, -0.8521)
+script = ExtResource("3")
+
+[node name="Money" parent="." instance=ExtResource("4")]
+transform = Transform3D(-15.7105, -3.0297, 0, 0, 0, 16, -3.0297, 15.7105, 0, -0.983, 0.77, 0.248)

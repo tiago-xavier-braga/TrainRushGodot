@@ -1,0 +1,12 @@
+{
+	"coins": 0,
+	"tutorial_completed": false,
+	"right_capacity_tier": 0,
+	"right_speed_tier": 0,
+	"right_gates_unlocked": [false, false, false, false],
+	"right_wagons_unlocked": [true, true, false, false],
+	"left_capacity_tier": 0,
+	"left_speed_tier": 0,
+	"left_gates_unlocked": [true, false, false, false],
+	"left_wagons_unlocked": [true, true, false, false]
+}

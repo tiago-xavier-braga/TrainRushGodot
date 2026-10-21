@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/kenney_train_kit/train_electric_subway_a.fbx" id="1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2.7, 2.8234, 5.2)
+
+[node name="TrainModel5" type="Node3D"]
+
+[node name="Model" type="StaticBody3D" parent="."]
+
+[node name="Mesh" parent="Model" instance=ExtResource("1")]
+transform = Transform3D(-2, 0, 0, 0, 2, 0, 0, 0, -2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 1.7307, 0)
+shape = SubResource("BoxShape3D_1")

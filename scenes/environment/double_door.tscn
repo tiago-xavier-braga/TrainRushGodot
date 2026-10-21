@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://assets/models/kenney_prototype_kit/door_sliding_double_left.res" id="1"]
+[ext_resource type="ArrayMesh" path="res://assets/models/kenney_prototype_kit/door_sliding_double_right.res" id="2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(1.38, 1.55, 5.808)
+
+[node name="DoubleDoor" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.775, -0.627)
+shape = SubResource("BoxShape3D_1")
+
+[node name="DoorLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, -2.3, 0, 1.55, 0, 3.3, 0, 0, -0.5842, 0, 2.1351)
+mesh = ExtResource("1")
+
+[node name="DoorRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 2.3, 0, 1.55, 0, -3.3, 0, 0, -0.5175, 0, -3.5376)
+mesh = ExtResource("2")
