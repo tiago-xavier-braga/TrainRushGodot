@@ -1,7 +1,9 @@
 # Train Rush
 
-Godot 4.7 (GL Compatibility) port of the Unity game in `unity/TrainRush/` (reference only, its
-own git repo, ignored here). 3D, web build published on GitHub Pages (no CrazyGames SDK).
+Godot 4.7 (GL Compatibility) port of the Unity game
+[TrainRush](https://github.com/tiago-xavier-braga/TrainRush). Clone it into `unity/TrainRush/`
+(git-ignored) when you need the reference or the converter. 3D, web build published on GitHub
+Pages (no CrazyGames SDK).
 
 - Game design: `docs/gdd.md`. Plan: `docs/roadmap.md`. Keep all project docs in `docs/`.
 - Vibe coded: no design note is needed before code, but stay inside the current roadmap phase;

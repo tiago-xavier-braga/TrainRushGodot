@@ -1,8 +1,9 @@
 # Roadmap
 
 Port of Train Rush from Unity to Godot 4.7 (GL Compatibility), as a web game published on
-GitHub Pages. The Unity project in `unity/TrainRush/` is the reference: the Godot version must
-play the same. Improvements are not part of the port; they go to the backlog.
+GitHub Pages. The Unity project ([TrainRush](https://github.com/tiago-xavier-braga/TrainRush),
+cloned into the git-ignored `unity/TrainRush/` when needed) is the reference: the Godot
+version must play the same. Improvements are not part of the port; they go to the backlog.
 All project documentation must be kept in the `docs/` folder.
 
 This project is vibe coded: items don't need a design note before code.

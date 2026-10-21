@@ -2,7 +2,7 @@
 .godot/
 /android/
 
-# Unity reference project (its own git repo, not part of this one)
+# Optional clone of the Unity project, for tools/unity_port (its own git repo)
 /unity/
 
 # Exports (web build, zips)

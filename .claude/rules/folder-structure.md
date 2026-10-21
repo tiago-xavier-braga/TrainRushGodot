@@ -19,7 +19,7 @@ res://
 ├── resources/                 # .tres data and save_defaults.json (Save Kit)
 ├── docs/                      # gdd.md, roadmap.md, feedback.md
 ├── tools/unity_port/          # Python scripts that convert the Unity scenes (.gdignore)
-├── unity/                     # Unity reference project (.gdignore, git-ignored)
+├── unity/                     # optional clone of the Unity project (git-ignored)
 ├── icon.svg
 └── project.godot
 ```

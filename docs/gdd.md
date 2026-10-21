@@ -1,6 +1,7 @@
 # GDD
 
-Written from the Unity version (`unity/TrainRush/`), which is the reference for the port.
+Written from the Unity version ([TrainRush](https://github.com/tiago-xavier-braga/TrainRush)),
+which is the reference for the port.
 Numbers come from its scenes and ScriptableObjects.
 
 ## Pitch
