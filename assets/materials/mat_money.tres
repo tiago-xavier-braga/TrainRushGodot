@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/props/txt_money_base_color.png" id="1"]
+
+[resource]
+resource_name = "mat_money"
+albedo_texture = ExtResource("1")
+roughness = 0.5

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "mat_traffic_light_red"
+albedo_color = Color(1, 0.116279066, 0, 1)
+roughness = 0.5

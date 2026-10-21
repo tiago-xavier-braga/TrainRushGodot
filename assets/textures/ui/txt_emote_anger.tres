@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_emotes.png" id="1"]
+
+[resource]
+atlas = ExtResource("1")
+region = Rect2(1042, 1040, 416, 496)
